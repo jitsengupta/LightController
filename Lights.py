@@ -14,11 +14,11 @@ class Light:
 
     # on: Turn the light on
     def on(self):
-        print("Light: turning on pin {self._pin}")
+        print(f"Light: turning on pin {self._pin}")
         GPIO.output(self._pin, True)
 
     def off(self):
-        print("Light: turning off pin {self._pin}")
+        print(f"Light: turning off pin {self._pin}")
         GPIO.output(self._pin, False)
 
 """
@@ -44,7 +44,7 @@ class DimLight(Light):
 
     # Set brightness to a specific level
     def setBrightness(self, brightness):
-        print("Dimlight: setting brightness to {brightness}")
+        print(f"Dimlight: setting brightness to {brightness}")
         self._pwm.start(brightness)
 
     # Do a quick demo of going up and down full brightness levels

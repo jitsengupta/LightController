@@ -14,25 +14,25 @@ class CompositeLight:
     
     # Constructor - just initialize the array of lights
     def __init__(self):
-        print("CompsiteLight constructor")
+        print("CompositeLight constructor")
         self._lights = []
         
     # Technically this is an abstract method but Python does not
     # correctly support it, so just an empty shell
     def run(self):
-        print("CompsiteLight: run a light show")
+        print("CompositeLight: run a light show")
         pass
 
     # Turn on all the componets. Note that in does not necessarily
     # get all items in order - but usually does
     def on(self):
-        print("CompsiteLight: turning on all lights")
+        print("CompositeLight: turning on all lights")
         for l in self._lights:
             l.on()
 
     # Turn off all the components
     def off(self):
-        print("CompsiteLight: turning off all lights")
+        print("CompositeLight: turning off all lights")
         for l in self._lights:
             l.off()
             
@@ -83,7 +83,7 @@ class Pixel(CompositeLight):
     # setColor method - sets to a specific color
     # Brightness is set as percentage in this app
     def setColor(self, RR, GG, BB):
-        print("Pixel: setColor: R:{RR}, G:{GG}, B:{BB}")
+        print(f"Pixel: setColor: R:{RR}, G:{GG}, B:{BB}")
         self._lights[0].setBrightness(RR)
         self._lights[1].setBrightness(GG)
         self._lights[2].setBrightness(BB)

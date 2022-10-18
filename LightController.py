@@ -26,13 +26,13 @@ class LightController:
 
     # Add a new component to the internal components array
     def addComponent(self, comp):
-        print("LightController: add a component {comp}")
+        print(f"LightController: add a component {comp}")
         self._components.append(comp)
         
     # Just a simple test application for running all components
     # Obviously, this assumes that all components respond to run()
     def runAll(self, times=2):
-        print("lightController: Demo run all internal components {times} times")
+        print(f"lightController: Demo run all internal components {times} times")
         for c in self._components:
             for i in range(0,times):
                 c.run()
