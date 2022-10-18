@@ -50,11 +50,18 @@ class LightController:
             c.off()
         GPIO.cleanup()
     
+# The entry point of the application. 
+# Remember every Python file can have its own entry point, which is
+# a great way to test the class(es) in that file. 
+# So our test applciation creates an instance of our LightController class,
+# Adds a couple of composite lights, then runs all the lights
+# before turning them off
+
 if __name__ == "__main__":
     mycontroller = LightController()
 
-    mycontroller.addComponent(TrafficLight(Light(6), Light(0), Light(5)))
-    mycontroller.addComponent(Pixel(DimLight(19), DimLight(13), DimLight(12)))
+    mycontroller.addComponent(TrafficLight(Light("green", 6), Light("yellow", 0), Light("red", 5)))
+    mycontroller.addComponent(Pixel(DimLight("R", 19), DimLight("G", 13), DimLight("B", 12)))
     
     mycontroller.runAll()
     mycontroller.off()

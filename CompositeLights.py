@@ -36,6 +36,12 @@ class CompositeLight:
         for l in self._lights:
             l.off()
             
+    # The __str__ method - add this to any class to generate a 
+    # Human readable version of the class
+    def __str__(self)->str:
+        return f"{type(self).__name__} with {len(self._lights)} lights"
+
+        
 """
 The first subclass of the CompositeLight class
 Has a gree, yellow and red light that need to be
